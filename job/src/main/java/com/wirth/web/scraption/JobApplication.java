@@ -35,7 +35,7 @@ public class JobApplication {
         HibernateJpaVendorAdapter bean = new HibernateJpaVendorAdapter();
         bean.setDatabase(Database.H2);
         bean.setGenerateDdl(true);
-        bean.setShowSql(true);
+        bean.setShowSql(false);
         return bean;
     }
 

@@ -11,6 +11,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Component
@@ -23,9 +24,8 @@ public class Scheduler {
     private ExtractHtml extractHtml;
 
 
-    @Scheduled(fixedDelay = 10000*60*5)
+    @Scheduled(fixedDelay = 1000*60*5)
     public void verifica() throws IOException {
-
         for (List<String> coluna : extractHtml.extract()) {
 
             Disponibilidade disponibilidade = Disponibilidade.builder()
